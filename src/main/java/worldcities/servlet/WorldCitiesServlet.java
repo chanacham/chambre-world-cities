@@ -27,7 +27,7 @@ public class WorldCitiesServlet extends HttpServlet {
         String cityName = cities.findClosestCity(cities.getCities(), lat, lon).getCityName();
 
         //servlet response
-        ServletResponse worldCitiesRs = new ServletResponse(cityName,lat,lon);
+        ServletResponse worldCitiesRs = new ServletResponse(cityName, lat, lon);
         resp.setContentType("text/json");
         resp.getWriter().println(gson.toJson(worldCitiesRs));
     }
