@@ -13,15 +13,16 @@ import java.util.List;
 public class ParseWorldCities {
     private double lon;
     private double lat;
+
     private List<City> cities;
 
-    public ParseWorldCities(double lon, double lat) throws IOException {
+    public ParseWorldCities(double lat, double lon) throws IOException {
         this.lat = lat;
         this.lon = lon;
         cities = loadCityListFromCSV();
     }
 
-    public City findClosestCity(List<City> cities, double lon, double lat) {
+    public City findClosestCity(List<City> cities, double lat, double lon) {
         City closestCity = null;
         double minDistance = cities.get(0).calculateDistance(lon, lat);
 
@@ -56,4 +57,5 @@ public class ParseWorldCities {
     public List<City> getCities() {
         return cities;
     }
+
 }

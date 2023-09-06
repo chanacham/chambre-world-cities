@@ -26,7 +26,7 @@ public class City {
         this.longitude = longitude;
     }
 
-    public double calculateDistance(double lon, double lat) {
+    public double calculateDistance(double lat, double lon) {
         return sqrt(((lon-longitude) * (lon-longitude)) + ((lat - latitude) * (lat - latitude)));
     }
 }

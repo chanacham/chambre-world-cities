@@ -12,15 +12,19 @@ import org.eclipse.jetty.servlet.ServletHandler;
  */
 public class JettyMain {
     public static void main(String[] args) throws Exception {
+        //starts and loads server on port 8080
         Server server = new Server();
         ServerConnector connector = new ServerConnector(server);
         connector.setPort(8080);
         server.setConnectors(new Connector[]{connector});
 
+        //adds the servlet to the Server
         ServletHandler handler = new ServletHandler();
         handler.addServletWithMapping(WorldCitiesServlet.class, "/worldCities");
         server.setHandler(handler);
 
+        //Starts the server until this program exists
+        //you must stop the program manually
         server.start();
     }
 }
