@@ -13,6 +13,7 @@ import java.io.IOException;
  * Servlet which given two parameters of long and lat, returns a json object of closest city
  */
 public class WorldCitiesServlet extends HttpServlet {
+
     private Gson gson = new Gson();
 
     @Override
