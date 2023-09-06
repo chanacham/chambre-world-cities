@@ -17,7 +17,7 @@ public class ParseWorldCities {
     private List<City> cities;
 
     public ParseWorldCities() throws IOException {
-        cities = loadCityListFromCSV();
+        cities = loadCityListFromCsv();
     }
 
     public City findClosestCity(List<City> cities, double lat, double lon) {
@@ -35,7 +35,7 @@ public class ParseWorldCities {
         return closestCity;
     }
 
-    private List<City> loadCityListFromCSV() throws IOException {
+    private List<City> loadCityListFromCsv() throws IOException {
         List<City> cityList = new ArrayList<>();
 
         File csvData = new File("src/main/resources/WorldCitiesFile.csv");

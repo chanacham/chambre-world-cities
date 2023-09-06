@@ -24,8 +24,8 @@ class ParseWorldCitiesTest {
         assertEquals(testObject.getLatitude(), 40.7);
         assertEquals(testObject.getLongitude(), 30.8);
 
-        assertEquals(result.getLongitude(),41.0167);
-        assertEquals(result.getLatitude(),30.9833);
+        assertEquals(result.getLongitude(), 41.0167);
+        assertEquals(result.getLatitude(), 30.9833);
 
     }
 }

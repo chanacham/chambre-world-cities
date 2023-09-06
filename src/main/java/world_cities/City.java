@@ -26,6 +26,6 @@ public class City {
     }
 
     public double calculateDistance(double lat, double lon) {
-        return sqrt(((lon-longitude) * (lon-longitude)) + ((lat - latitude) * (lat - latitude)));
+        return sqrt(((lon - longitude) * (lon - longitude)) + ((lat - latitude) * (lat - latitude)));
     }
 }
