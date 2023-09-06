@@ -1,4 +1,4 @@
-package world_cities;
+package world_cities.servlet;
 
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
@@ -18,7 +18,7 @@ public class JettyMain {
         server.setConnectors(new Connector[]{connector});
 
         ServletHandler handler = new ServletHandler();
-        handler.addServletWithMapping(WorldCitiesServlet.class, "/definition");
+        handler.addServletWithMapping(WorldCitiesServlet.class, "/worldCities");
         server.setHandler(handler);
 
         server.start();

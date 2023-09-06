@@ -1,4 +1,4 @@
-package world_cities;
+package world_cities.servlet;
 
 
 /**
