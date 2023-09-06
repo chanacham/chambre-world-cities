@@ -5,6 +5,7 @@ import static java.lang.Math.sqrt;
 public class City {
     String cityName;
     double latitude;
+    double longitude;
 
     public String getCityName() {
         return cityName;
@@ -17,8 +18,6 @@ public class City {
     public double getLongitude() {
         return longitude;
     }
-
-    double longitude;
 
     public City(String name, double latitude, double longitude) {
         this.cityName = name;

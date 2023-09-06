@@ -23,7 +23,7 @@ public class WorldCitiesServlet extends HttpServlet {
         //find the closest city to the given coordinate
         double lon = Double.parseDouble(req.getParameter("lon"));
         double lat = Double.parseDouble(req.getParameter("lat"));
-        ParseWorldCities cities = new ParseWorldCities(lat,lon);
+        ParseWorldCities cities = new ParseWorldCities();
         String cityName = cities.findClosestCity(cities.getCities(), lat,lon).getCityName();
 
         //servlet response

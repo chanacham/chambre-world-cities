@@ -16,9 +16,7 @@ public class ParseWorldCities {
 
     private List<City> cities;
 
-    public ParseWorldCities(double lat, double lon) throws IOException {
-        this.lat = lat;
-        this.lon = lon;
+    public ParseWorldCities() throws IOException {
         cities = loadCityListFromCSV();
     }
 
