@@ -2,7 +2,6 @@ package worldcities.servlet;
 
 import com.google.gson.Gson;
 import worldcities.ParseWorldCities;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,13 +21,13 @@ public class WorldCitiesServlet extends HttpServlet {
             HttpServletResponse resp
     ) throws ServletException, IOException {
         //find the closest city to the given coordinate
-        double lon = Double.parseDouble(req.getParameter("lon"));
         double lat = Double.parseDouble(req.getParameter("lat"));
+        double lon = Double.parseDouble(req.getParameter("lon"));
         ParseWorldCities cities = new ParseWorldCities();
         String cityName = cities.findClosestCity(cities.getCities(), lat, lon).getCityName();
 
         //servlet response
-        ServletResponse worldCitiesRs = new ServletResponse(cityName, String.valueOf(lon), String.valueOf(lat));
+        ServletResponse worldCitiesRs = new ServletResponse(cityName,lat,lon);
         resp.setContentType("text/json");
         resp.getWriter().println(gson.toJson(worldCitiesRs));
     }
