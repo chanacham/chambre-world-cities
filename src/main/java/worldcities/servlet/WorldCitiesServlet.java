@@ -1,8 +1,7 @@
-package world_cities.servlet;
+package worldcities.servlet;
 
 import com.google.gson.Gson;
-import world_cities.ParseWorldCities;
-import world_cities.servlet.ServletResponse;
+import worldcities.ParseWorldCities;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

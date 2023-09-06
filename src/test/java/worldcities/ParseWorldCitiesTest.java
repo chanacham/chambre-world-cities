@@ -1,4 +1,4 @@
-package world_cities;
+package worldcities;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ParseWorldCitiesTest {
 
     @Test
-    void loadCityListFromCSV() throws IOException {
+    void loadCityListFromCsv() throws IOException {
         ParseWorldCities cities = new ParseWorldCities();
         assertEquals(cities.getCities().size(), 44691);
     }

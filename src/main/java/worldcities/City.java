@@ -1,4 +1,4 @@
-package world_cities;
+package worldcities;
 
 import static java.lang.Math.sqrt;
 

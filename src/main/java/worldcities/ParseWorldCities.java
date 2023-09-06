@@ -1,4 +1,4 @@
-package world_cities;
+package worldcities;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
