@@ -14,6 +14,7 @@ import java.io.IOException;
  */
 public class WorldCitiesServlet extends HttpServlet {
     private Gson gson = new Gson();
+
     @Override
     protected void doGet(
             HttpServletRequest req,
@@ -23,10 +24,10 @@ public class WorldCitiesServlet extends HttpServlet {
         double lon = Double.parseDouble(req.getParameter("lon"));
         double lat = Double.parseDouble(req.getParameter("lat"));
         ParseWorldCities cities = new ParseWorldCities();
-        String cityName = cities.findClosestCity(cities.getCities(), lat,lon).getCityName();
+        String cityName = cities.findClosestCity(cities.getCities(), lat, lon).getCityName();
 
         //servlet response
-        ServletResponse worldCitiesRs = new ServletResponse(cityName,String.valueOf(lon), String.valueOf(lat));
+        ServletResponse worldCitiesRs = new ServletResponse(cityName, String.valueOf(lon), String.valueOf(lat));
         resp.setContentType("text/json");
         resp.getWriter().println(gson.toJson(worldCitiesRs));
     }
