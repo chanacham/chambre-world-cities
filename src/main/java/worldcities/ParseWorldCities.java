@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParseWorldCities {
-    private double lon;
-    private double lat;
 
     private List<City> cities;
 
@@ -20,7 +18,7 @@ public class ParseWorldCities {
         cities = loadCityListFromCsv();
     }
 
-    public City findClosestCity(List<City> cities, double lat, double lon) {
+    public City findClosestCity(double lat, double lon) {
         City closestCity = null;
         double minDistance = cities.get(0).calculateDistance(lon, lat);
 

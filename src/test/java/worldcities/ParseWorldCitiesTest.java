@@ -17,11 +17,11 @@ class ParseWorldCitiesTest {
     @Test
     void findClosestCity() throws IOException {
         ParseWorldCities cities = new ParseWorldCities();
-        City result = cities.findClosestCity(cities.getCities(), 40.8, 30.7);
-        assertEquals(result.getCityName(), "Arar");
+        City result = cities.findClosestCity(40.8, 30.7);
+        assertEquals(result.cityName(), "Arar");
 
-        assertEquals(result.getLongitude(), 41.0167);
-        assertEquals(result.getLatitude(), 30.9833);
+        assertEquals(result.lon(), 41.0167);
+        assertEquals(result.lat(), 30.9833);
 
     }
 }

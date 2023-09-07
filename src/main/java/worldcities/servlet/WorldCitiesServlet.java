@@ -24,7 +24,7 @@ public class WorldCitiesServlet extends HttpServlet {
         double lat = Double.parseDouble(req.getParameter("lat"));
         double lon = Double.parseDouble(req.getParameter("lon"));
         ParseWorldCities cities = new ParseWorldCities();
-        String cityName = cities.findClosestCity(cities.getCities(), lat, lon).getCityName();
+        String cityName = cities.findClosestCity(lat, lon).cityName();
 
         //servlet response
         ServletResponse worldCitiesRs = new ServletResponse(cityName, lat, lon);
