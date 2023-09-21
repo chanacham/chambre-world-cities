@@ -12,9 +12,7 @@ import worldcities.ParseWorldCities;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class WorldCitiesServletTest {
@@ -23,7 +21,7 @@ class WorldCitiesServletTest {
         //given
         City mockCity = mock();
         ParseWorldCities parseWorldCities = mock();
-        doReturn(mockCity).when(parseWorldCities).findClosestCity(40.771724,-73.988326);
+        doReturn(mockCity).when(parseWorldCities).findClosestCity(40.771724, -73.988326);
 
         Gson gson = new Gson();
 
@@ -37,7 +35,7 @@ class WorldCitiesServletTest {
         doReturn(out).when(response).getWriter();
 
         //when
-        servlet.doGet(request,response);
+        servlet.doGet(request, response);
 
         //then
         verify(response).setContentType("text/json");

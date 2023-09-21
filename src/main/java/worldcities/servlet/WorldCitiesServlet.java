@@ -26,10 +26,11 @@ public class WorldCitiesServlet extends HttpServlet {
 
     /**
      * This is used in tests
+     *
      * @param gson
      * @param cities
      */
-    public WorldCitiesServlet(Gson gson, ParseWorldCities cities){
+    public WorldCitiesServlet(Gson gson, ParseWorldCities cities) {
         this.gson = gson;
         this.cities = cities;
     }
