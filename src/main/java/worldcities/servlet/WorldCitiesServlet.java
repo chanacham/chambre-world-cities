@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class WorldCitiesServlet extends HttpServlet {
     ParseWorldCities cities;
-    private Gson gson = new Gson();
+    private Gson gson;
 
     /**
      * This is used by Jetty
@@ -27,7 +27,7 @@ public class WorldCitiesServlet extends HttpServlet {
     /**
      * This is used in tests
      *
-     * @param gson gson
+     * @param gson   gson
      * @param cities cities
      */
     public WorldCitiesServlet(Gson gson, ParseWorldCities cities) {
