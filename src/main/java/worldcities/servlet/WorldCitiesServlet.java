@@ -1,19 +1,40 @@
 package worldcities.servlet;
 
 import com.google.gson.Gson;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import worldcities.City;
 import worldcities.ParseWorldCities;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 
 /**
  * Servlet which given two parameters of long and lat, returns a json object of closest city
  */
 public class WorldCitiesServlet extends HttpServlet {
+    ParseWorldCities cities;
+    private Gson gson;
 
-    private Gson gson = new Gson();
+    /**
+     * This is used by Jetty
+     */
+    public WorldCitiesServlet() throws IOException {
+        this(new Gson(), new ParseWorldCities());
+    }
+
+    /**
+     * This is used in tests
+     *
+     * @param gson   gson
+     * @param cities cities
+     */
+    public WorldCitiesServlet(Gson gson, ParseWorldCities cities) {
+        this.gson = gson;
+        this.cities = cities;
+    }
+
 
     @Override
     protected void doGet(
@@ -23,7 +44,6 @@ public class WorldCitiesServlet extends HttpServlet {
         //find the closest city to the given coordinate
         double lat = Double.parseDouble(req.getParameter("lat"));
         double lon = Double.parseDouble(req.getParameter("lon"));
-        ParseWorldCities cities = new ParseWorldCities();
         String cityName = cities.findClosestCity(lat, lon).cityName();
 
         //servlet response

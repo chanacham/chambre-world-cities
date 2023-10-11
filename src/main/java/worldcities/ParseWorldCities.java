@@ -6,6 +6,7 @@ import org.apache.commons.csv.CSVRecord;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +37,9 @@ public class ParseWorldCities {
     private List<City> loadCityListFromCsv() throws IOException {
         List<City> cityList = new ArrayList<>();
 
-        File csvData = new File("src/main/resources/WorldCitiesFile.csv");
-        CSVParser parser = CSVParser.parse(csvData, Charset.defaultCharset(), CSVFormat.RFC4180);
+        InputStream inputStream = getClass().getClassLoader()
+                .getResourceAsStream("WorldCitiesFile.csv");
+        CSVParser parser = CSVParser.parse(inputStream, Charset.defaultCharset(), CSVFormat.RFC4180);
         List<CSVRecord> csvRecordList = parser.getRecords();
 
 
